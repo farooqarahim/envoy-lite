@@ -19,7 +19,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        node: [18, 20, 22]
+        node: [20, 22]
     steps:
       - uses: actions/checkout@v5
       - uses: actions/setup-node@v5
@@ -32,6 +32,22 @@ jobs:
       - run: npm run test
       - run: npm run test:types
       - run: npm run build
+
+  node18:
+    name: Node 18 smoke (built dist)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - run: npm run build
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 18
+      - run: node test/compatibility/node18.smoke.mjs
 
   size:
     name: Bundle size
