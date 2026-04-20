@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm audit *)",
+      "Bash(gh run *)",
+      "Bash(deno --version)",
+      "Bash(command -v brew)",
+      "Bash(brew install *)",
+      "Bash(/opt/homebrew/bin/deno install *)",
+      "Bash(/opt/homebrew/bin/deno test *)",
+      "Bash(cp /Users/farooqrahim/work/OpenSource/envoy-lite/test/compatibility/deno.test.ts /tmp/envoy-deno-test/test/compatibility/deno.test.ts)",
+      "Bash(cp /Users/farooqrahim/work/OpenSource/envoy-lite/vitest.config.ts /tmp/envoy-deno-test/vitest.config.ts)",
+      "Bash(npm test *)"
+    ]
+  }
+}
