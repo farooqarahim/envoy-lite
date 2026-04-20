@@ -3,6 +3,7 @@ import { defineConfig } from "vitest/config";
 export default defineConfig({
   test: {
     include: ["test/**/*.test.ts", "test/**/*.test-d.ts"],
+    exclude: ["test/compatibility/deno.test.ts", "node_modules/**"],
     typecheck: {
       enabled: true,
       include: ["test/**/*.test-d.ts"]

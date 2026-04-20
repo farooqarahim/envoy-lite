@@ -3,8 +3,12 @@
 **Tiny env loader and schema validator.** Zero dependencies. Edge-first.
 
 [![npm](https://img.shields.io/npm/v/envoy-lite.svg)](https://www.npmjs.com/package/envoy-lite)
-[![size](https://img.shields.io/bundlephobia/minzip/envoy-lite.svg)](https://bundlephobia.com/package/envoy-lite)
-[![CI](https://img.shields.io/github/actions/workflow/status/farooqarahim/envoy-lite/ci.yml)](https://github.com/farooqarahim/envoy-lite/actions)
+[![downloads](https://img.shields.io/npm/dm/envoy-lite.svg)](https://www.npmjs.com/package/envoy-lite)
+[![minzip](https://img.shields.io/bundlephobia/minzip/envoy-lite.svg?label=minzip)](https://bundlephobia.com/package/envoy-lite)
+[![install size](https://packagephobia.com/badge?p=envoy-lite)](https://packagephobia.com/result?p=envoy-lite)
+[![types](https://img.shields.io/npm/types/envoy-lite.svg)](https://www.npmjs.com/package/envoy-lite)
+[![zero deps](https://img.shields.io/badge/dependencies-0-brightgreen.svg)](https://www.npmjs.com/package/envoy-lite?activeTab=dependencies)
+[![CI](https://img.shields.io/github/actions/workflow/status/farooqarahim/envoy-lite/ci.yml?label=CI)](https://github.com/farooqarahim/envoy-lite/actions)
 [![license](https://img.shields.io/npm/l/envoy-lite.svg)](./LICENSE)
 
 ## Why
@@ -250,7 +254,16 @@ A value supplied to `.default(v)` is returned as-is without being passed through
 
 ## Security
 
-See [SECURITY.md](./SECURITY.md).
+npm's supply-chain scanners flag this package for **environment variable access**. That is its purpose — it reads the `source` you pass in (defaulting to `process.env` / `Deno.env.toObject()`) and validates it. For transparency:
+
+- **Reads only.** Values are read from the `source` map, validated, and returned. Nothing is written back.
+- **No network.** No `fetch`, no sockets, no telemetry, no analytics.
+- **No filesystem.** No reads, no writes, no `.env` parsing.
+- **No child processes.** No `exec`, no `spawn`.
+- **Zero runtime dependencies.** No transitive supply-chain surface.
+- **Secrets stay local.** `secret()` values are never included in `EnvoyError.message`, `formatErrors()` output, or `mask()` output.
+
+See [SECURITY.md](./SECURITY.md) for the full policy, scope, and reporting flow.
 
 ## License
 

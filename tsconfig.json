@@ -25,5 +25,5 @@
     "noEmit": true
   },
   "include": ["src/**/*", "test/**/*", "bench/**/*"],
-  "exclude": ["node_modules", "dist", "examples"]
+  "exclude": ["node_modules", "dist", "examples", "test/compatibility/deno.test.ts"]
 }
