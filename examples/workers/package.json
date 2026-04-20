@@ -1,0 +1,15 @@
+{
+  "name": "example-workers",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "check": "tsc --noEmit"
+  },
+  "dependencies": {
+    "envoy-lite": "workspace:*"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.0.0",
+    "typescript": "^5.4.0"
+  }
+}

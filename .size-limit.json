@@ -1,0 +1,21 @@
+[
+  {
+    "name": "Full bundle (ESM)",
+    "path": "dist/index.js",
+    "limit": "5.5 KB",
+    "gzip": true
+  },
+  {
+    "name": "Full bundle (CJS)",
+    "path": "dist/index.cjs",
+    "limit": "5.75 KB",
+    "gzip": true
+  },
+  {
+    "name": "Tree-shaken: envoy + str only",
+    "path": "dist/index.js",
+    "import": "{ envoy, str }",
+    "limit": "2 KB",
+    "gzip": true
+  }
+]

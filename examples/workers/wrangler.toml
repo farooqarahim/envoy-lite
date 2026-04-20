@@ -1,0 +1,7 @@
+name = "envoy-example-worker"
+main = "src/index.ts"
+compatibility_date = "2025-01-01"
+
+[vars]
+API_KEY = "dev-key"
+ENVIRONMENT = "development"

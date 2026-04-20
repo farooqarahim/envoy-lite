@@ -1,0 +1,87 @@
+{
+  "name": "envoy-lite",
+  "version": "0.1.0",
+  "description": "Tiny env loader and schema validator. Zero dependencies, edge-first.",
+  "license": "MIT",
+  "author": "Farooq A Rahim <farooqarahim@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/farooqarahim/envoy-lite.git"
+  },
+  "homepage": "https://github.com/farooqarahim/envoy-lite#readme",
+  "bugs": {
+    "url": "https://github.com/farooqarahim/envoy-lite/issues"
+  },
+  "keywords": [
+    "env",
+    "environment",
+    "config",
+    "validation",
+    "typescript",
+    "edge",
+    "cloudflare-workers",
+    "deno",
+    "bun"
+  ],
+  "type": "module",
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./package.json": "./package.json"
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "unpkg": "./dist/index.js",
+  "jsdelivr": "./dist/index.js",
+  "files": [
+    "dist",
+    "README.md",
+    "CHANGELOG.md",
+    "LICENSE",
+    "SECURITY.md"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "packageManager": "npm@11.4.2",
+  "scripts": {
+    "build": "tsup",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:types": "vitest run --typecheck",
+    "test:coverage": "vitest run --coverage",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "typecheck": "tsc --noEmit",
+    "size": "size-limit",
+    "bench": "vitest bench",
+    "ci": "npm run typecheck && npm run lint && npm run test && npm run test:types && npm run build && npm run size",
+    "release": "changeset publish",
+    "prepublishOnly": "npm run build && npm run test && npm run test:types && npm run size"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.27.0",
+    "@size-limit/preset-small-lib": "^11.0.0",
+    "@types/node": "^20.0.0",
+    "@typescript-eslint/eslint-plugin": "^8.0.0",
+    "@typescript-eslint/parser": "^8.0.0",
+    "@vitest/coverage-v8": "^2.1.9",
+    "eslint": "^9.0.0",
+    "fast-check": "^3.22.0",
+    "prettier": "^3.0.0",
+    "size-limit": "^11.0.0",
+    "tsup": "^8.0.0",
+    "typescript": "^5.4.0",
+    "vitest": "^2.1.9"
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  }
+}
